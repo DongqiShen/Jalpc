@@ -1,29 +1,29 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Company A
+    detail: Huawei Technologies Co., Ltd.
     i18n: company_a
   desc:
-    detail: I worked at Company A ...
+    detail: I started my career in Huawei at Shenzhen in 2012labs.
     i18n: company_a_desc
   date:
-    detail: Apr. 2016
+    detail: Oct. 2018
     i18n: company_a_date
   job:
-    detail: CTO
+    detail: Junior software engineer
     i18n: company_a_job
   icon: fa-plus-square
 
 - name:
-    detail: Company B
+    detail: University of Manchester
     i18n: company_b
   desc:
-    detail: I worked at Company B ...
+    detail: I studied Artificial Intelligence in the UoM as a Master student.
     i18n: company_b_desc
   date:
-    detail: Jun. 2015
+    detail: Sep. 2017 - Sep. 2018
     i18n: company_b_date
   job:
-    detail: Full Stack Developer
+    detail: Advanced Computer Science with Specialisation in Artificial Intelligence
     i18n: company_b_job
   icon: fa-plus-square
