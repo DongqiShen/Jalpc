@@ -4,7 +4,7 @@
     detail: Huawei Technologies Co., Ltd.
     i18n: company_a
   desc:
-    detail: I started my career in Huawei at Shenzhen in 2012labs.
+    detail: Huawei 2012labs
     i18n: company_a_desc
   date:
     detail: Oct. 2018
@@ -18,7 +18,7 @@
     detail: University of Manchester
     i18n: company_b
   desc:
-    detail: I studied Artificial Intelligence in the UoM as a Master student.
+    detail: Master degree in Manchester
     i18n: company_b_desc
   date:
     detail: Sep. 2017 - Sep. 2018
