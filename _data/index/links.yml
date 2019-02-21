@@ -1,9 +1,7 @@
 # links section data
 #
-#- last_name: Geek 
-#  first_name: 
-#  desc: Welcome to contact me
-#  website: http://www.jarrekk.com/donate/
-#  email: me@jarrekk.com
-
-desc: Thanks for Jarrekk, without his theme, I can not build this website
+- last_name:  
+  first_name: 
+  desc: Thanks for Jarrekk, without his theme, I can not build this website
+  website: http://www.jarrekk.com/donate/
+  #  email: me@jarrekk.com
