@@ -18,7 +18,8 @@ icon:       icon-html
 Python代码。当然这不是重点，重点是当时被中文读入写出弄得很头疼（乱码），无奈之下，本着求甚解的态度，
 还是决定了解一下unicode编码规则，于是有了此文...  
 
-# Unicode
+# Unicode  
+
 首先大家最熟悉的肯定是ascii编码（BTW，读作“as-key”），8位，有256种可能，但是只用到了前127位，首位是0，
 编码了常用的标点符号，以及26个英文字母的大小写。一个英文字母，对应于一个唯一的8位二进制数，对于英语来
 说，这种实现很完美，但是对于汉字，就不适用了。
@@ -35,7 +36,8 @@ unicode的缺点也显而易见，对于英语来说，它比原来浪费了近1
 给传输带了的压力就不容忽视。于是乎就出现了面向传输的标准UTF。UTF-8就是一次传输8位，一个字节，而UTF-16就是
 一次两个字节。后者我没有仔细了解，但是大概原理和前者差不多吧，这里我只简单介绍下UTF-8的编码方式。
 
-# UTF-8
+# UTF-8  
+
 UTF-8 就是一套以8位为一个编码单位的可变长编码，可！变！长！（让我想到了哈夫曼，虽然原理不同，但是所实现的
 功能是一样的，可变长能节省空间）。它将一个字符编码为1到4个字节，如下所示：  
 U+  0000 ~ U+ 007F: 0XXXXXXX  
@@ -60,19 +62,30 @@ unicode的弊端）
 这就是将unicode编码的7231按照UTF-8标准编码为字节序列E788B1。
 至于改为unicode 能节省多少空间，我没有统计过，当然也并不知道，但是想来有这样的设计，必然优于unicode编码吧
 （我就是这么迷信权威）。
-为了更好得理解，我么再来看一个python3的例子，如下图：
-![avatar](https://github.com/DongqiShen/dongqishen.github.io/blob/master/_posts/1.png)
+为了更好得理解，我么再来看一个python3的例子, 输入以下python 代码  
+        str = '\u6211\u7231\u4f60'
+        print(str)  
+        str = str.encode('utf-8')  
+        print(str)  
+        print(str.decode('utf-8'))  
+
 其中，str是以unicode编码的，表示【我爱你】。然后我们可以通过encode这个函数，将str重新用utf-8来编码。经过
-utf-8编码后，这个str也就有了decode方法，可以重新解码为unicode。我们来看一下结果的三个输出，如下图：
-![avatar](https://github.com/DongqiShen/dongqishen.github.io/blob/master/_posts/2.png)
+utf-8编码后，这个str也就有了decode方法，可以重新解码为unicode。我们来看一下结果的三个输出，如下所示：  
+
+        我爱你  
+        b'\xe6\x88\x91\xe7\x88\xb1\xe4\xbd\xa0'  
+        我爱你  
+
 可以看到，第一个输出就是unicode编码所代表的字符。第二个输出是经过了utf-8编码，是以二进制表示的字节，每个
 字占用三个字节，其中【爱】所表示的和我们先前算出来的一致，为【e788b1】，其中\x是转义符，表示16进制。
 
-# TIPs
+# TIPs  
+
 1. 当时处理的时候要每输出（到记事本）一个词语就换行，在window下换行是“\t\n” ，换行在linux下和windows下确有
 区别，但是我记不太请了，只是当“\n”换行不成功后，我是尝试性的测试了下，具体后续还要了解一下。
 2. 碰到编码问题的主要原因是python2和python3的不同造成，这也是这两个版本最重要的区别之一。尽管我也了解了一下
 ，但还是感觉不深刻，需要再仔细看一遍
 
-# Reference
+# Reference  
+
 1. [知乎详细解答](https://www.zhihu.com/question/23374078/answer/69732605)
